@@ -55,15 +55,9 @@ function NavBar() {
     const adminRouter = () => {
         return (
             <>
-                <Link href="/users">
-                    <a className="dropdown-item">Users</a>
-                </Link>
-                <Link href="/create">
-                    <a className="dropdown-item">Products</a>
-                </Link>
-                <Link href="/categories">
-                    <a className="dropdown-item">Categories</a>
-                </Link>
+                <Link legacyBehavior href="/users"><a className="dropdown-item">Users</a></Link>
+                <Link legacyBehavior href="/create"><a className="dropdown-item">Products</a></Link>
+                <Link legacyBehavior href="/categories"><a className="dropdown-item">Categories</a></Link>
             </>
         )
     }
@@ -80,15 +74,9 @@ function NavBar() {
                 </a>
 
                 <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <Link href="/profile">
-                        <a className="dropdown-item">Profile</a>
-                    </Link>
-                    <Link href="/infor">
-                        <a className="dropdown-item">Personal page</a>
-                    </Link>
-                    <Link href="/location">
-                        <a className="dropdown-item">location</a>
-                    </Link>
+                    <Link legacyBehavior href="/profile"><a className="dropdown-item">Profile</a></Link>
+                    <Link legacyBehavior href="/infor"><a className="dropdown-item">Personal page</a></Link>
+                    <Link legacyBehavior href="/location"><a className="dropdown-item">location</a></Link>
                     {
                         auth.user.role === 'admin' && adminRouter()
                     }
@@ -101,37 +89,22 @@ function NavBar() {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link href="/">
-                <i className="navbar-brand font-text">Youngz Shop</i>
-            </Link>
+            <Link legacyBehavior href="/"><i className="navbar-brand font-text">Youngz Shop</i></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul className="navbar-nav">
                     <li className="nav-item li-mr">
-                        <Link href="/">
-                            <a className={"nav-link " + isActive('/')}>
-                                <HouseDoor />
-                            </a>
-                        </Link>
+                        <Link legacyBehavior href="/"><a className={"nav-link " + isActive('/')}><HouseDoor /></a></Link>
                     </li>
 
                     <li className="nav-item li-mr">
-                        <Link href="/location">
-                            <a className={"nav-link" + isActive('/location')}>
-                                <Location />
-                            </a>
-                        </Link>
+                        <Link legacyBehavior href="/location"><a className={"nav-link" + isActive('/location')}><Location /></a></Link>
                     </li>
 
                     <li className="nav-item li-mr">
-                        <Link href="/hotnew">
-                            <a className={"nav-link position-relative" + isActive('/hotnew')}>
-                                <Store />
-                                {windowDimenion.winWidth > 992 ?
-                                    <span className="position-absolute"
-                                        style={{
+                        <Link legacyBehavior href="/hotnew"><a className={"nav-link position-relative" + isActive('/hotnew')}><Store />{windowDimenion.winWidth > 992 ?<span className="position-absolute"style={{
                                             padding: '3px 6px',
                                             background: '#d71036',
                                             borderRadius: '50%',
@@ -145,34 +118,24 @@ function NavBar() {
                                     </span>
                                     : <></>
                                 }
-                            </a>
-                        </Link>
+                            </a></Link>
                     </li>
 
                     {auth?.user?.role === 'admin' &&
                         <li className="nav-item li-mr">
-                            <Link href="/mail">
-                                <a className={"nav-link position-relative" + isActive('/mail')}>
-                                    <Mail />
-                                </a>
-                            </Link>
+                            <Link legacyBehavior href="/mail"><a className={"nav-link position-relative" + isActive('/mail')}><Mail /></a></Link>
                         </li>
                     }
 
                     {auth?.user?.role === 'admin' &&
                         <li className="nav-item li-mr">
-                            <Link href="/dashboard">
-                                <a className={"nav-link position-relative" + isActive('/dashboard')}>
-                                    <Chart />
-                                </a>
-                            </Link>
+                            <Link legacyBehavior href="/dashboard"><a className={"nav-link position-relative" + isActive('/dashboard')}><Chart /></a></Link>
                         </li>
                     }
 
                     {auth?.user?.role !== 'admin' &&
                         <li className="nav-item li-mr">
-                            <Link href="/cart">
-                                <a className={"nav-link position-relative" + isActive('/cart')}>
+                            <Link legacyBehavior href="/cart"><a className={"nav-link position-relative" + isActive('/cart')}>
                                     <Cart />
                                     {windowDimenion.winWidth > 992 ?
                                         <span className="position-absolute"
@@ -190,8 +153,7 @@ function NavBar() {
                                         </span>
                                         : <></>
                                     }
-                                </a>
-                            </Link>
+                                </a></Link>
                         </li>
                     }
                 </ul>
@@ -202,11 +164,7 @@ function NavBar() {
                     {
                         Object.keys(auth).length === 0
                             ? <li className="nav-item">
-                                <Link href="/signin">
-                                    <a className={"nav-link" + isActive('/signin')}>
-                                        <i className="fas fa-user" aria-hidden="true"></i> Sign in
-                                    </a>
-                                </Link>
+                                <Link legacyBehavior href="/signin"><a className={"nav-link" + isActive('/signin')}><i className="fas fa-user" aria-hidden="true"></i> Sign in</a></Link>
                             </li>
                             : loggedRouter()
                     }

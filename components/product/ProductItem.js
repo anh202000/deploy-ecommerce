@@ -49,10 +49,8 @@ const ProductItem = ({ product, handleCheck }) => {
         return (
             <>
                 {componentInfo()}
-                <Link href={`product/${product._id}`}>
-                    <a className="btn btn-light border ml-5"
-                        style={{ marginRight: '5px', paddingTop: '7px', flex: 1 }}>View</a>
-                </Link>
+                <Link legacyBehavior href={`product/${product._id}`}><a className="btn btn-light border ml-5"
+                        style={{ marginRight: '5px', paddingTop: '7px', flex: 1 }}>View</a></Link>
                 <button className="btn btn-light border"
                     style={{ marginLeft: '5px', flex: 1 }}
                     disabled={product.inStock === 0 ? true : false}
@@ -68,10 +66,8 @@ const ProductItem = ({ product, handleCheck }) => {
             <>
                 {componentInfo()}
 
-                <Link href={`create/${product._id}`}>
-                    <a className="btn btn-light border ml-5"
-                        style={{ marginRight: '5px', paddingTop: '7px', flex: 1 }}>Edit</a>
-                </Link>
+                <Link legacyBehavior href={`create/${product._id}`}><a className="btn btn-light border ml-5"
+                        style={{ marginRight: '5px', paddingTop: '7px', flex: 1 }}>Edit</a></Link>
                 <button className="btn btn-light border"
                     style={{ marginLeft: '5px', flex: 1 }}
                     data-toggle="modal" data-target="#exampleModal"

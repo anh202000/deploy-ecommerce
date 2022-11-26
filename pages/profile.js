@@ -297,7 +297,7 @@ const Profile = () => {
                             <a>{idx}</a>
                         </td>
                         <td className="p-2">
-                          <Link href={`/order/${order._id}`}>
+                          <Link legacyBehavior href={`/order/${order._id}`}>
                             <a>{order._id}</a>
                           </Link>
                         </td>

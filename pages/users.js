@@ -52,8 +52,8 @@ const Users = () => {
                                     }
                                 </th>
                                 <th>
-                                    <Link href={`/edit_user/${user._id}`}>
-                                        <a><i className="fas fa-edit text-info mr-2" title="Edit"></i></a>
+                                    <Link legacyBehavior href={`/edit_user/${user._id}`}>
+                                        <a><i className="fas fa-edit text-info mr-2" title="Edit">Edit</i></a>
                                     </Link>
 
                                     {
