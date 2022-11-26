@@ -4,7 +4,7 @@ import { DataContext } from '../../store/GlobalState'
 import { addToCart } from '../../store/Actions'
 import LikeBold from '../../public/likeBold'
 import Like from '../../public/like'
-import DisLikeBold from '../../public/DisLikeBold'
+import DisLikeBold from '../../public/dislikeBold'
 import Dislike from '../../public/dislike'
 import Comment from '../../public/comment'
 
@@ -30,7 +30,8 @@ const ProductItem = ({ product, handleCheck }) => {
 
                 {
                     golobalCheckDupicate_dislike?.length > 0 ?
-                        <span><DisLikeBold />{product?.disLike?.length}</span>
+                        <span>
+                            <DisLikeBold />{product?.disLike?.length}</span>
                         :
                         <span><Dislike />{product?.disLike?.length}</span>
                 }
