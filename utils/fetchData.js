@@ -1,4 +1,4 @@
-const baseUrl = 'https://deploy-ecommerce.vercel.app/'
+const baseUrl = 'https://deploy-ecommerce.vercel.app'
 
 export const getData = async (url, token) => {
     console.log(process.env, 'process.env')
