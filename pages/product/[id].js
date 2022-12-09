@@ -162,7 +162,7 @@ const DetailProduct = (props) => {
                 <title>Detail Product</title>
             </Head>
 
-            <div className="col-md-6">
+            <div className="col-md-5">
                 {/* <img src={product.images[tab].url} alt={product.images[tab].url}
                     className="d-block img-thumbnail rounded mt-4 w-100"
                     style={{ height: '350px' }} />
@@ -210,11 +210,6 @@ const DetailProduct = (props) => {
                 <button type="button" className="btn btn-dark d-block my-3 px-5"
                     onClick={() => dispatch(addToCart(product, cart))} >
                     Buy
-                </button>
-
-                <button type="button" className="btn btn-dark d-block my-3 px-5"
-                    onClick={onToggleGallery} >
-                    View
                 </button>
             </div>
 
