@@ -17,9 +17,9 @@ function Layout({ children }) {
             <div className="container">
                 <Notify />
                 <Modal />
-                <div class="online-indicator" style={{ position: 'fixed', bottom: '4%', right: '2%' }}>
+                {/* <div class="online-indicator" style={{ position: 'fixed', bottom: '4%', right: '2%' }}>
                     <span class="blink"></span>
-                </div>
+                </div> */}
                 {children}
             </div>
 

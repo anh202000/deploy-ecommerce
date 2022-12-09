@@ -93,7 +93,7 @@ const Home = (props) => {
 
       <Filter state={state} />
 
-      <MessengerCustomerChat pageId="100087553510087" appId="5701547326574526"/>
+      {/* <MessengerCustomerChat pageId="100087553510087" appId="5701547326574526"/> */}
 
       {
         auth.user && auth.user.role === 'admin' &&
@@ -133,16 +133,6 @@ const Home = (props) => {
 
       {/* <!-- Your Plugin chat code --> */}
       <div id="fb-customer-chat" class="fb-customerchat"></div>
-
-      <main>
-        <h1 className="title">
-          Youngz <a href="https://nextjs.org">Messenger</a>
-        </h1>
-
-        <p className="description">
-          Get started by your account FaceBook
-        </p>
-      </main>
 
       <style jsx>{`
         .container {
